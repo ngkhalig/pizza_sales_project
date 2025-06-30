@@ -2,12 +2,12 @@
 This project analyzes pizza sales data using SQL and Power BI to monitor business performance, highlight best/worst-selling products.
 
 ## Tools  
-- **SQL**: Data cleaning, transformation
+- **SQL**: Standardized formats, and performed data exploration
 - **Power BI**: DAX calculations, data modeling, interactive dashboard design
 
 ## Key Metrics  
 - Total Revenue, Total Orders, Total Pizzas Sold  
-- Average Order Value (AOV), Avg. Pizzas per Order  
+- Average Pizzas per Order  
 - Sales breakdown by Category, Size, and Time  
 - Top/Bottom 5 Pizzas by Revenue, Quantity, and Orders
 
