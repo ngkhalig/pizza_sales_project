@@ -1,4 +1,4 @@
-﻿/*-- Thêm cột mới dạng DATE để lưu kết quả đã convert
+﻿/*-- Thêm cột mới dạng DATE 
 ALTER TABLE dbo.data_sales 
 ADD clean_order_date DATE,
     dayweek varchar(50),
@@ -12,39 +12,39 @@ SET clean_order_date = TRY_CONVERT(DATE, order_date, 105),
 	monthly = datepart(month, clean_order_date),
 	daily = datepart(day, clean_order_date);*/
 
---total price
+--Total price
 select total_price = sum(total_price)
 from dbo.data_sales
 
---average_ord
+--Avg orders
 select avg_ord = sum(total_price)/count(distinct order_id)
 from dbo.data_sales
 
---sum quantity
+--Sum Quantity
 select total_quantity = sum(quantity)
 from dbo.data_sales
 
---count order_id
+--Count order_id
 select total_orderID = count(distinct order_id)
 from dbo.data_sales
 
---quantity_per_order
+--Quantity per order
 select quantity_per_order = sum(quantity)/count(distinct order_id)
 from dbo.data_sales
 
---total order - dayweek
+--Total orders - dayweek
 select dayweek,
        total_orderID = count(distinct order_id)
 from dbo.data_sales
 group by dayweek
 
---total order - monthly
+--Total orders - monthly
 select monthly,
 	   total_ord_monthly = count(distinct order_id)
 from dbo.data_sales
 group by monthly
 
---revenue - monthly
+--Revenue - monthly
 select monthly,
 	   revenue_monthly = cast(sum(total_price) as decimal(10,2))
 from dbo.data_sales
